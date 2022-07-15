@@ -8,9 +8,10 @@ module.exports = {
     menu: "./src/menu.js",
   },
   output: {
-    filename: "[name]bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    assetModuleFilename: "[name][ext]",
   },
   devtool: "inline-source-map",
   devServer: {
@@ -39,9 +40,9 @@ module.exports = {
       },
     ],
   },
-  optimization: {
+  /*   optimization: {
     runtimeChunk: "single",
-  },
+  }, */
 
   ////////////////////////////////////////////////////////////////
 };
