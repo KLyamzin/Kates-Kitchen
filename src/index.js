@@ -1,13 +1,22 @@
 import "./styles.css";
-import printMe from "./menu";
-// import BackgroundImage from "./pexels-klaus-nielsen-6287300.jpg";
+import { renderHome } from "./home";
 
 const containerDiv = document.getElementsByClassName("container");
 const headerDiv = document.querySelector(".header");
 const mainDiv = document.getElementsByClassName("main");
 const footerDiv = document.getElementsByClassName("footer");
 
-const listOfLinks = document.createElement("ul");
-listOfLinks.classList.add("list-of-links");
-headerDiv.appendChild(listOfLinks);
-printMe();
+const headerLinks = document.querySelectorAll("li");
+headerLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const linkTarget = e.target.innerText;
+    if (linkTarget === "HOME") {
+      resetMain();
+      renderHome();
+    }
+  });
+});
+
+function resetMain() {
+  mainDiv.innerHTML = "";
+}
