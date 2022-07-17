@@ -11,12 +11,7 @@ headerLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     const linkTarget = e.target.innerText;
     if (linkTarget === "HOME") {
-      resetMain();
       renderHome();
     }
   });
 });
-
-function resetMain() {
-  mainDiv.innerHTML = "";
-}

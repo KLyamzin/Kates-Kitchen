@@ -1,5 +1,8 @@
+import placeOwnerImage from "./assets/pexels-ketut-subiyanto-4473398-2.jpeg";
+import { resetMain } from "./reset";
 const renderHome = () => {
   const mainDiv = document.querySelector(".main");
+  resetMain(mainDiv);
 
   const placeNameContainer = document.createElement("div");
   placeNameContainer.classList.add("place-name-container");
@@ -14,7 +17,11 @@ const renderHome = () => {
 
   const placeOwner = document.createElement("img");
   placeOwner.classList.add("place-owner");
-  placeOwner.setAttribute("src", "./pexels-ketut-subiyanto-4473398-2.jpeg");
+  // placeOwner.setAttribute(
+  //   "src",
+  //   "./assets/pexels-ketut-subiyanto-4473398-2.jpeg"
+  // );
+  placeOwner.setAttribute("src", placeOwnerImage);
 
   const placeWelcome = document.createElement("p");
   placeWelcome.classList.add("place-welcome");
