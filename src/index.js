@@ -3,14 +3,17 @@ import { renderHome } from "./home";
 import { renderMenu } from "./menu";
 import { renderAbout } from "./about";
 import { resetActive, addActive } from "./reset";
+import backgroundImage from "./assets/pexels-maria-orlova-4906513.jpeg";
 
 renderHome(addActive);
 const containerDiv = document.getElementsByClassName("container");
 const headerDiv = document.querySelector(".header");
-const mainDiv = document.getElementsByClassName("main");
+const mainDiv = document.querySelector(".main");
+const background = document.querySelector(".background");
+background.setAttribute("src", backgroundImage);
 const footerDiv = document.getElementsByClassName("footer");
-
 const headerLinks = document.querySelectorAll("li");
+
 headerLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     const linkTarget = e.target.innerText;

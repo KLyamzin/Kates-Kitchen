@@ -1,10 +1,57 @@
 import { resetMain } from "./reset";
-import coffeeMachine from "./assets/pexels-michael-burrows-7125662.jpg";
+import coffeeMachine from "./assets/pexels-michael-burrows-7125662.png";
 import sandwich from "./assets/pexels-suzy-hazelwood-1209029.jpg";
-import eggDish from "./assets/pexels-kiro-wang-7463313.png";
+import eggDishImage from "./assets/pexels-kiro-wang-7463313.png";
 import desert from "./assets/pexels-engin-akyurt-2478319.jpg";
+const mainDiv = document.querySelector(".main");
+// Menu Items
+const foodSections = ["COFFEE", "MAIN", "DESERTS"];
+const coffee = {
+  Espresso: "..................... $3.50",
+  ["Double Espresso"]: "....... $5.50",
+  Latte: "............................ $6.50",
+  Cappuccino: "................. $5.50",
+  ["Double Cappuccino"]: "... $7.50",
+  Amercano: "................... $4.50",
+  ["Double Amercano"]: "..... $5.50",
+  ["Extra Espresso Shot"]: ". $1.00",
+};
+const eggsDish = {
+  ["Avocado Toast"]: "............. $7.00",
+  ["Pan-fried Eggs With Lox"]: "... $12.00",
+  ["Avocado Toast With Egg"]: "... $10.00",
+  ["Avocado Toast With Lox"]: "... $10.00",
+  ["Omelette with Vegetables"]: ".. $10.00",
+  ["Omelette with Lox"]: "........ $10.00",
+};
+// Calling the functions
 const renderMenu = () => {
-  const mainDiv = document.querySelector(".main");
   resetMain(mainDiv);
+  addMenuSections(coffee, coffeeMachine, foodSections[0]);
+  addMenuSections(eggsDish, eggDishImage, foodSections[1]);
+
+  function addMenuSections(item, image, section) {
+    const itemContainer = document.createElement("div");
+    const itemHeader = document.createElement("p");
+    const itemImage = document.createElement("img");
+    const itemSelections = document.createElement("div");
+    // elementsCreate();
+    for (let key in item) {
+      itemSelections.innerHTML += `<p class="food-name">${key} <span class="food-price">${item[key]}</span></p>`;
+    }
+    itemHeader.innerText = section;
+    itemImage.setAttribute("src", image);
+    // }
+    // function elementsCreate() {
+    itemHeader.classList.add("food-header");
+    itemContainer.classList.add("food-container");
+    itemSelections.classList.add("food-selections");
+    itemImage.classList.add("food-image");
+
+    itemContainer.appendChild(itemHeader);
+    itemContainer.appendChild(itemImage);
+    itemContainer.appendChild(itemSelections);
+    mainDiv.appendChild(itemContainer);
+  }
 };
 export { renderMenu };

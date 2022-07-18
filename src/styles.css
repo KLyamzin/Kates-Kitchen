@@ -4,7 +4,8 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  background-color: #f9fbfd;
+  /* background-color: #f9fbfd; */
+  background-color: #14272d;
 }
 .container {
   height: 100vh;
@@ -22,6 +23,7 @@ body {
   display: flex;
   padding: 5px;
   padding-bottom: 12px;
+  z-index: 100;
 }
 /* .footer {
   position: fixed;
@@ -73,38 +75,37 @@ a {
   text-decoration: none;
 }
 .main {
+  background-color: rgba(58, 135, 153, 0.8);
   width: clamp(500px, 70%, 800px);
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 0 10px;
-  height: 90%;
-  min-height: 800px;
-  position: relative;
-  gap: 20px;
-}
-.main::before {
-  content: "";
-  background-image: url("./assets/pexels-maria-orlova-4906513.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  opacity: 0.6;
+  top: 10%;
+  gap: 20px;
+  z-index: 10;
+  border-radius: 8px;
+  padding-bottom: 20px;
+}
+
+.background {
+  background-color: #f9fbfd;
+  opacity: 0.8;
+  filter: blur(2px);
+  z-index: 1;
+  width: 1500px;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: -6%;
 }
 .place-name-container {
   width: 100%;
   z-index: 10;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .place-name,
 .place-name-sub {
@@ -122,19 +123,23 @@ a {
 
 .place-name {
   font-size: 4rem;
-  margin-top: 40px;
-  padding-top: 20px;
+  /* margin-top: 40px; */
+  padding-top: 30px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .place-name-sub {
   font-size: 2rem;
   padding-bottom: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 /* owner image */
 .place-owner {
-  width: 85%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 15px;
   border: none;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   z-index: 9;
 }
 /* message */
@@ -146,9 +151,64 @@ a {
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
-  width: 75%;
+  /* width: 75%; */
   padding: 40px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   z-index: 10;
   margin: 0 auto;
+}
+/*  */
+/* -------- Menu tab -------- */
+/*  */
+.food-container {
+  z-index: 10;
+  color: #f9fbfd;
+  font-family: "Rajdhani", sans-serif;
+  font-size: calc(1.2em + 0.3vw);
+  line-height: 0.67em;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-header {
+  font-family: "Monoton", cursive;
+  text-align: center;
+  font-size: calc(1.9em + 0.3vw);
+  letter-spacing: 0.11em;
+  color: #e88846;
+  /* position: relative; */
+  z-index: 10;
+  background-color: #3a8799;
+  padding: 55px 0;
+  width: 700px;
+  margin: 0;
+}
+.food-image {
+  z-index: 10;
+  /* position: relative;
+  top: -25%; */
+  width: 100%;
+
+  /* object-fit: cover; */
+}
+.food-selections {
+  z-index: 10;
+  background-color: #3a8799;
+  /* position: relative; */
+  /* top: -45%; */
+  padding: 10px 0;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 20px; */
+  /* align-items: center;  */
+}
+.food-price {
+  font-weight: 900;
+  color: #e88846;
 }
