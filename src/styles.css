@@ -4,7 +4,6 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  /* background-color: #f9fbfd; */
   background-color: #14272d;
 }
 .container {
@@ -14,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 .header {
   background-color: #14272d;
@@ -26,6 +26,7 @@ body {
   z-index: 100;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 3px 5px rgb(0, 0, 0, 0.4);
 }
 /* .footer {
   position: fixed;
@@ -86,18 +87,16 @@ li.active {
 /* -------- Home tab -------- */
 /*  */
 .main {
-  background-color: rgba(58, 135, 153, 0.8);
-  width: clamp(370px, 70%, 800px);
+  background-color: rgba(58, 135, 153, 0.3);
+  width: clamp(370px, 95%, 800px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: absolute;
   top: 10%;
-  gap: 20px;
   z-index: 10;
   border-radius: 8px;
-  padding-bottom: 20px;
 }
 
 .background {
@@ -114,7 +113,6 @@ li.active {
 .place-name-container {
   width: 100%;
   z-index: 10;
-  /* margin-bottom: 10px; */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -141,13 +139,12 @@ li.active {
 .place-name-sub {
   font-size: 2rem;
   padding-bottom: 20px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  box-shadow: 0 5px 5px rgb(0, 0, 0, 0.4);
 }
 /* owner image */
 .place-owner {
   width: 100%;
-  margin: 0 15px;
+  margin: 0;
   border: none;
   z-index: 9;
 }
@@ -162,6 +159,9 @@ li.active {
   padding: 40px;
   z-index: 10;
   margin: 0 auto;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 -5px 5px rgb(0, 0, 0, 0.3);
 }
 /*  */
 /* -------- Menu tab -------- */
@@ -176,6 +176,7 @@ li.active {
   -webkit-font-smoothing: antialiased;
   font-weight: 500;
   padding: 0;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,20 +189,23 @@ li.active {
   font-size: calc(1.9em + 0.3vw);
   letter-spacing: 0.11em;
   color: #e88846;
-  z-index: 10;
+  z-index: 20;
   background-color: #3a8799;
-  padding: 55px 0;
+  padding: 0;
+  line-height: 1.5em;
+  padding: 30px 0;
   width: 100%;
   margin: 0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  box-shadow: 0 5px 5px rgb(0, 0, 0, 0.4);
 }
 .food-image {
   z-index: 10;
   width: 100%;
 }
 .food-selections {
-  z-index: 10;
+  z-index: 20;
   background-color: #3a8799;
   padding: 10px 0;
   text-align: center;
@@ -209,6 +213,7 @@ li.active {
   white-space: nowrap;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  box-shadow: 0 -5px 5px rgb(0, 0, 0, 0.4);
 }
 .food-name {
   white-space: nowrap;
@@ -233,7 +238,6 @@ li.active {
 .welcomeOne {
   padding: 20px 100px;
   background-color: #f0d2c0;
-  /* color: #14272d; */
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #3a8799;
@@ -253,7 +257,7 @@ li.active {
   background-color: #e88846;
   color: #f9fbfd;
   font-family: "Rajdhani", sans-serif;
-  /* font-size: calc(1.4em + 0.7vw); */
+  font-size: calc(1.4em + 0.7vw);
   line-height: 0.67em;
   letter-spacing: 0.04em;
   font-weight: 500;
@@ -269,28 +273,66 @@ li.active {
 .person-container > p {
   background-color: #f0d2c0;
   color: #3a8799;
-  /* font-size: calc(1em + 0.3vw); */
   font-family: "Quicksand", sans-serif;
   margin: 0;
   padding: 20px;
   border-radius: 8px;
   position: relative;
   top: -10px;
-  /* width: 100%; */
 }
 .all-persons-container {
   display: flex;
-  /* flex-wrap: wrap; */
-  background-color: #f9fbfd;
   justify-content: center;
-  /* padding: 10px; */
-  /* width: 100%; */
+  width: 100%;
+  margin-top: 40px;
 }
 .person-container {
+  background-color: #f9fbfd;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin: 10px; */
   padding: 10px;
-  /* width: 50%; */
+  width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  .main {
+    width: 98%;
+    top: 1%;
+    position: unset;
+  }
+  .food-header {
+    padding: 35px 0;
+  }
+  .food-name {
+    white-space: nowrap;
+    display: flex;
+    padding: 0 10%;
+  }
+
+  .all-persons-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .person-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0 0;
+    border-radius: 8px;
+  }
+  .person-container > img {
+    width: 70%;
+  }
+  .person-container > h1 {
+    line-height: 1em;
+    margin: auto;
+    width: 80%;
+  }
+  .welcomeOne {
+    padding: 20px 50px;
+  }
 }

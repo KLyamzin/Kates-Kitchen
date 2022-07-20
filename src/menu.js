@@ -5,7 +5,7 @@ import eggDishImage from "./assets/pexels-kiro-wang-7463313.png";
 import desertImage from "./assets/pexels-engin-akyurt-2478319.jpg";
 const mainDiv = document.querySelector(".main");
 // Menu Items
-const foodSections = ["COFFEE", "MAIN", "DESERTS"];
+const foodSections = ["COFFEE", "MAIN", "DESSERTS"];
 const coffee = {
   Espresso: " $3.50",
   ["Double Espresso"]: " $5.50",
