@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
@@ -19,6 +20,20 @@
         <li>MENU</li>
         <li>ABOUT US</li>
       </ul>
+      <!-- hamburger menu -->
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input id="closeCheckbox" type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="#"><li class="active">HOME</li></a>
+            <a href="#"><li>MENU</li></a>
+            <a href="#"><li>ABOUT US</li></a>
+          </ul>
+        </div>
+      </nav>
     </header>
     <img class="background" alt="">
     <main class="main">

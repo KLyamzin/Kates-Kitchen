@@ -3,8 +3,12 @@ const resetMain = (div) => {
 };
 
 const resetActive = () => {
-  let active = document.querySelector(".active");
-  active.removeAttribute("class", "active");
+  let active = document.querySelectorAll(".active");
+  active.forEach((el) => {
+    el.removeAttribute("class", "active");
+  });
+  let buttonCheck = document.getElementById("closeCheckbox");
+  buttonCheck.checked = false;
 };
 const addActive = (link) => {
   link.classList.add("active");

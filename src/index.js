@@ -1,4 +1,5 @@
 import "./styles.css";
+import "./hamburger.css";
 import { renderHome } from "./home";
 import { renderMenu } from "./menu";
 import { renderAbout } from "./about";
