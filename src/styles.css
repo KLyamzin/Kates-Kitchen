@@ -22,26 +22,62 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.header {
+.header,
+.footer {
   background-color: #14272d;
-  /* height: 100px; */
   width: 100vw;
   margin: 0;
   display: flex;
   padding: 5px 0;
-  /* padding-bottom: 12px; */
   z-index: 100;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 3px 5px rgb(0, 0, 0, 0.4);
 }
-/* .footer {
-  position: fixed;
-  top: 100%;
-  height: 50px;
-  width: 100%;
-  background-color: #8ab1c4;
-} */
+.footer {
+  position: static;
+  justify-content: flex-start;
+  margin-top: auto;
+  padding: 5px 10px;
+}
+.footer .fa {
+  /* font-size: 2.5rem; */
+  font-size: calc(1.8rem + 0.6vh);
+  color: #f9fbfd;
+  margin: 0 5px;
+}
+.footer a {
+  letter-spacing: 0.2rem;
+  font-size: calc(1.1rem + 0.3vh);
+  color: #f0d2c0;
+  font-weight: 900;
+  font-family: "Quicksand", sans-serif;
+
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.push-right {
+  margin-left: auto;
+}
+.push-right span {
+  letter-spacing: 0;
+  font-size: 0.8rem;
+}
+.fa.fa-camera-retro {
+  font-size: 1rem;
+}
+
+.fa.fa-camera-retro:hover {
+  color: rgb(7, 160, 129);
+}
+.fa-linkedin-square:hover {
+  color: rgb(60, 148, 235);
+}
+.fa-github-square:hover {
+  color: rgba(157, 157, 157, 0.957);
+}
 .logo {
   font-family: "Monoton", cursive;
   color: #e88846;
