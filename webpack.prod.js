@@ -50,9 +50,9 @@ module.exports = merge(common, {
       // },
     ],
   },
-  /*   optimization: {
+  optimization: {
     runtimeChunk: "single",
-  }, */
+  },
 
   ////////////////////////////////////////////////////////////////
 });
