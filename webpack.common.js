@@ -2,39 +2,30 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
   entry: {
-    index: "./src/index.js",
+    index: path.resolve(__dirname, "./src/index.js"),
   },
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "./dist"),
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
-  devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Development | Kate's Kitchen",
+      title: "Kate's Kitchen",
       filename: "index.html",
       template: "src/template.html",
     }),
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
       // {
-      //   test: /\.(s(a|c)ss)$/,
+      //   test: /\.css$/i,
+      //   use: ["style-loader", "css-loader"],
+      // },
+      // {
+      //   test: /\.s[ac]ss$/i,
       //   use: ["style-loader", "css-loader", "sass-loader"],
       // },
       {
